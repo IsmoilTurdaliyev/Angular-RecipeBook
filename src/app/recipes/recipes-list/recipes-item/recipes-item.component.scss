@@ -1,0 +1,33 @@
+
+.card{
+    border-color: red;
+    margin: 10px auto;
+    &:hover{
+        background-color: rgb(255, 32, 32);
+        color: #fff;
+    }
+}
+.active{
+    background-color: rgb(255, 32, 32);
+    color: #fff;
+}
+.content-block{
+    @media (max-width:360px) {
+        flex-direction: column;
+        justify-content: space-between;
+        .block{
+            text-align: center;
+            margin: 10px 0;
+            width: 100%;
+            align-items: flex-start;
+        }
+    }
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    .block{
+        display: inline;
+    }
+}

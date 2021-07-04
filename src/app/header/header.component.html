@@ -1,0 +1,34 @@
+<nav class="navbar navbar-expand py-1 navbar-light bg-none">
+  <div class="container-lg">
+    <a class="navbar-brand">RecipeBook</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav ms-auto">
+        <a class="nav-link" [routerLink]="'/recipes'" [routerLinkActiveOptions]="{exact:true}"
+          [routerLinkActive]="'active'" *ngIf="isAuth">Recipes</a>
+        <a class="nav-link" [routerLink]="'/shopping-lists'" [routerLinkActive]="'active'">Shopping list</a>
+        <a class="nav-link" [routerLink]="'/auth'" [routerLinkActive]="'active'" *ngIf="!isAuth">Authenticate</a>
+      </div>
+      <ul class="navbar-right ms-auto navbar-nav" *ngIf="isAuth">
+        <li class="dropdown" >
+          <a class="nav-link" [routerLink]="['logout']" (click)="onLogout()">Logout</a>
+        </li>
+        <li class="dropdown">
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Manage
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li><a class="dropdown-item" (click)="onSaveData()">Save Data</a></li>
+              <li><a class="dropdown-item" (click)="onFetchData()">Fetch Data</a></li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

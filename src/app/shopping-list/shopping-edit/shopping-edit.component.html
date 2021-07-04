@@ -1,0 +1,23 @@
+<div class="row">
+    <form [formGroup]="formGroup" class="col-sm-12">
+        <div class="row">
+            <div class="col-sm-7 form-group">
+                <label for="name">Name</label>
+                <input type="text" formControlName="name" id="name" class="form-control">
+            </div>
+            <div class="col-sm-5 form-group">
+                <label for="amount">Amount</label>
+                <input type="number" pattern="^[1-9]+[0-9]*$" formControlName="amount" id="amount" class="form-control">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 mt-3">
+                <button class="btn btn-success me-2" [disabled]="!formGroup.valid" type="submit"
+                    (click)="onSubmit()">{{editMode ? 'Update':'Add'}}</button>
+                <button class="btn btn-danger m-1" type="submit" (click)="onDelete()"
+                    *ngIf="editMode">Delete</button>
+                <button class="btn btn-primary m-1" type="submit" (click)="onClear()">Clear</button>
+            </div>
+        </div>
+    </form>
+</div>

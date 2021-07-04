@@ -1,0 +1,13 @@
+.btn-success {
+    background-color: red;
+    color: #fff;
+    border-color: red;
+    box-shadow: none;
+    box-shadow: 0 3px 6px rgb(255, 129, 129);
+    &:active{
+        box-shadow: none;
+    }
+    &:hover{
+        box-shadow: 0 0 0 #0000;
+    }
+}
